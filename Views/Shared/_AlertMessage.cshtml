@@ -1,0 +1,24 @@
+@{
+    var mes = TempData["StatusMessage"]  as string;
+}
+
+@* @if(!string.IsNullOrEmpty(mes))
+{
+<div class="alert alert-warning alert-dismissible fade show" role= "alert">
+    @* <strong>Can trọng</strong> kiểm tra lại 
+    @TempData["StatusMessage"]
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+} *@
+
+
+@if (!String.IsNullOrEmpty(mes))
+{
+    @* var statusMessageClass = Model.StartsWith("Error") ? "danger" : "success"; *@
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        @TempData["StatusMessage"]
+    </div>
+}
